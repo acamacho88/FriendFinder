@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Survey page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -17,7 +17,112 @@
 </head>
 
 <body>
+    <h1>Survey</h1>
+    <form role="form">
+        <h3>Enter your name:</h3>
+        <input type="text">
+        <h3>Enter a link to your picture:</h3>
+        <input type="text">
+        <h3>Do you like going to parties/going out in the evening?</h3>
+        <select id="parties">
+            <option value="--None--">--None--</option>
+            <option value="Love it">Love it</option>
+            <option value="Sort of">Sort of</option>
+            <option value="Not really">Not really</option>
+            <option value="Hate it">Hate it</option>
+        </select>
+        <h3>Do you enjoy deep conversations?</h3>
+        <select id="conversations">
+            <option value="--None--">--None--</option>
+            <option value="Love it">Love it</option>
+            <option value="Sort of">Sort of</option>
+            <option value="Not really">Not really</option>
+            <option value="Hate it">Hate it</option>
+        </select>
+        <h3>Does politics/politicial affiliations mean a lot to you?</h3>
+        <select id="politics">
+            <option value="--None--">--None--</option>
+            <option value="Love it">Love it</option>
+            <option value="Sort of">Sort of</option>
+            <option value="Not really">Not really</option>
+            <option value="Hate it">Hate it</option>
+        </select>
+        <h3>Do you enjoy being more active, going out on hikes, biking, etc?</h3>
+        <select id="active">
+            <option value="--None--">--None--</option>
+            <option value="Love it">Love it</option>
+            <option value="Sort of">Sort of</option>
+            <option value="Not really">Not really</option>
+            <option value="Hate it">Hate it</option>
+        </select>
+        <h3>Do you enjoy having music on?</h3>
+        <select id="music">
+            <option value="--None--">--None--</option>
+            <option value="Love it">Love it</option>
+            <option value="Sort of">Sort of</option>
+            <option value="Not really">Not really</option>
+            <option value="Hate it">Hate it</option>
+        </select>
+        <h3>Are you a big sports fan?</h3>
+        <select id="sports">
+            <option value="--None--">--None--</option>
+            <option value="Love it">Love it</option>
+            <option value="Sort of">Sort of</option>
+            <option value="Not really">Not really</option>
+            <option value="Hate it">Hate it</option>
+        </select>
+        <h3>Do you like watching a lot of TV?</h3>
+        <select id="tv">
+            <option value="--None--">--None--</option>
+            <option value="Love it">Love it</option>
+            <option value="Sort of">Sort of</option>
+            <option value="Not really">Not really</option>
+            <option value="Hate it">Hate it</option>
+        </select>
+    </form>
+    <button type="submit" class="btn btn-primary btn-md" id="add-btn">Submit</button>
+    <script type="text/javascript">
+        // Question: What does this code do?
+        var interestTranslate = {
+            "--None--": "bad",
+            "Love it": 4,
+            "Sort of": 3,
+            "Not really": 2,
+            "Hate it": 1
+        };
 
+        $("#add-btn").on("click", function (event) {
+            event.preventDefault();
+
+            var userInterests = [
+                interestTranslate[$("#parties").val().trim()],
+                interestTranslate[$("#conversations").val().trim()],
+                interestTranslate[$("#politics").val().trim()],
+                interestTranslate[$("#active").val().trim()],
+                interestTranslate[$("#music").val().trim()],
+                interestTranslate[$("#sports").val().trim()],
+                interestTranslate[$("#tv").val().trim()],
+            ];
+
+            var complete = true;
+
+            for (i in userInterests) {
+                if (userInterests[i] == "bad") complete = false;
+            }
+
+            if (complete) {
+                // Question: What does this code do??
+                $.post("/api/friends", newCharacter)
+                    .then(function (data) {
+                        console.log(data);
+                        alert("Adding character...");
+                    });
+            } else {
+                alert("Form incomplete!");
+            }
+
+        });
+    </script>
 </body>
 
 </html>
