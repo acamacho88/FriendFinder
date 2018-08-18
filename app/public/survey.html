@@ -20,9 +20,9 @@
     <h1>Survey</h1>
     <form role="form">
         <h3>Enter your name:</h3>
-        <input type="text">
+        <input id="name" type="text">
         <h3>Enter a link to your picture:</h3>
-        <input type="text">
+        <input id="photo" type="text">
         <h3>Do you like going to parties/going out in the evening?</h3>
         <select id="parties">
             <option value="--None--">--None--</option>
@@ -94,6 +94,9 @@
         $("#add-btn").on("click", function (event) {
             event.preventDefault();
 
+            var name = $("#name").val().trim();
+            var photo = $("#photo").val().trim();
+
             var userInterests = [
                 interestTranslate[$("#parties").val().trim()],
                 interestTranslate[$("#conversations").val().trim()],
@@ -110,12 +113,18 @@
                 if (userInterests[i] == "bad") complete = false;
             }
 
-            if (complete) {
+            if (complete || name == '' || photo == '') {
                 // Question: What does this code do??
-                $.post("/api/friends", newCharacter)
+                var newUser = {
+                    name: name,
+                    photo: photo,
+                    scores: userInterests
+                }
+
+                $.post("/api/friends", newUser)
                     .then(function (data) {
                         console.log(data);
-                        alert("Adding character...");
+                        alert("Adding user...");
                     });
             } else {
                 alert("Form incomplete!");
