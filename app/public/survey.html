@@ -17,70 +17,111 @@
 </head>
 
 <body>
-    <h1>Survey</h1>
-    <form role="form">
-        <h3>Enter your name:</h3>
-        <input id="name" type="text">
-        <h3>Enter a link to your picture:</h3>
-        <input id="photo" type="text">
-        <h3>Do you like going to parties/going out in the evening?</h3>
-        <select id="parties">
-            <option value="--None--">--None--</option>
-            <option value="Love it">Love it</option>
-            <option value="Sort of">Sort of</option>
-            <option value="Not really">Not really</option>
-            <option value="Hate it">Hate it</option>
-        </select>
-        <h3>Do you enjoy deep conversations?</h3>
-        <select id="conversations">
-            <option value="--None--">--None--</option>
-            <option value="Love it">Love it</option>
-            <option value="Sort of">Sort of</option>
-            <option value="Not really">Not really</option>
-            <option value="Hate it">Hate it</option>
-        </select>
-        <h3>Does politics/politicial affiliations mean a lot to you?</h3>
-        <select id="politics">
-            <option value="--None--">--None--</option>
-            <option value="Love it">Love it</option>
-            <option value="Sort of">Sort of</option>
-            <option value="Not really">Not really</option>
-            <option value="Hate it">Hate it</option>
-        </select>
-        <h3>Do you enjoy being more active, going out on hikes, biking, etc?</h3>
-        <select id="active">
-            <option value="--None--">--None--</option>
-            <option value="Love it">Love it</option>
-            <option value="Sort of">Sort of</option>
-            <option value="Not really">Not really</option>
-            <option value="Hate it">Hate it</option>
-        </select>
-        <h3>Do you enjoy having music on?</h3>
-        <select id="music">
-            <option value="--None--">--None--</option>
-            <option value="Love it">Love it</option>
-            <option value="Sort of">Sort of</option>
-            <option value="Not really">Not really</option>
-            <option value="Hate it">Hate it</option>
-        </select>
-        <h3>Are you a big sports fan?</h3>
-        <select id="sports">
-            <option value="--None--">--None--</option>
-            <option value="Love it">Love it</option>
-            <option value="Sort of">Sort of</option>
-            <option value="Not really">Not really</option>
-            <option value="Hate it">Hate it</option>
-        </select>
-        <h3>Do you like watching a lot of TV?</h3>
-        <select id="tv">
-            <option value="--None--">--None--</option>
-            <option value="Love it">Love it</option>
-            <option value="Sort of">Sort of</option>
-            <option value="Not really">Not really</option>
-            <option value="Hate it">Hate it</option>
-        </select>
-    </form>
-    <button type="submit" class="btn btn-primary btn-md" id="add-btn">Submit</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h1>Survey</h1>
+                <form role="form">
+                    <h3>Enter your name:</h3>
+                    <input id="name" type="text">
+                    <h3>Enter a link to your picture:</h3>
+                    <input id="photo" type="text">
+                    <h3>Do you like going to parties/going out in the evening?</h3>
+                    <select id="parties">
+                        <option value="--None--">--None--</option>
+                        <option value="Love it">Love it</option>
+                        <option value="Sort of">Sort of</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Hate it">Hate it</option>
+                    </select>
+                    <h3>Do you enjoy deep conversations?</h3>
+                    <select id="conversations">
+                        <option value="--None--">--None--</option>
+                        <option value="Love it">Love it</option>
+                        <option value="Sort of">Sort of</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Hate it">Hate it</option>
+                    </select>
+                    <h3>Does politics/politicial affiliations mean a lot to you?</h3>
+                    <select id="politics">
+                        <option value="--None--">--None--</option>
+                        <option value="Love it">Love it</option>
+                        <option value="Sort of">Sort of</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Hate it">Hate it</option>
+                    </select>
+                    <h3>Do you enjoy being more active, going out on hikes, biking, etc?</h3>
+                    <select id="active">
+                        <option value="--None--">--None--</option>
+                        <option value="Love it">Love it</option>
+                        <option value="Sort of">Sort of</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Hate it">Hate it</option>
+                    </select>
+                    <h3>Do you enjoy having music on?</h3>
+                    <select id="music">
+                        <option value="--None--">--None--</option>
+                        <option value="Love it">Love it</option>
+                        <option value="Sort of">Sort of</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Hate it">Hate it</option>
+                    </select>
+                    <h3>Are you a big sports fan?</h3>
+                    <select id="sports">
+                        <option value="--None--">--None--</option>
+                        <option value="Love it">Love it</option>
+                        <option value="Sort of">Sort of</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Hate it">Hate it</option>
+                    </select>
+                    <h3>Do you like watching a lot of TV?</h3>
+                    <select id="tv">
+                        <option value="--None--">--None--</option>
+                        <option value="Love it">Love it</option>
+                        <option value="Sort of">Sort of</option>
+                        <option value="Not really">Not really</option>
+                        <option value="Hate it">Hate it</option>
+                    </select>
+                </form>
+                <br>
+                <button type="submit" class="btn btn-primary btn-md" id="add-btn">Submit</button>
+                <br>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <a href="/api/friends">API Friends List</a>
+            </div>
+            <div class="col-md-2">
+                <a href="https://github.com/acamacho88/FriendFinder">Github repo</a>
+            </div>
+            <div class="col-md-7"></div>
+        </div>
+    </div>
+    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="friendModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="friendModalLabel">Survey submitted!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your best match is
+                        <span id="friendName"></span>
+                    </p>
+                    <img id="friendImage" style="width: 100px; height: 100px;" src=''>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
         // Question: What does this code do?
         var interestTranslate = {
@@ -109,12 +150,13 @@
 
             var complete = true;
 
-            for (i in userInterests) {
-                if (userInterests[i] == "bad") complete = false;
-            }
+            userInterests.forEach(interest => {
+                if (interest == "bad") complete = false;
+            });
 
-            if (complete || name == '' || photo == '') {
-                // Question: What does this code do??
+            if (!complete || name == '' || photo == '') {
+                alert("Form incomplete!");
+            } else {
                 var newUser = {
                     name: name,
                     photo: photo,
@@ -123,11 +165,13 @@
 
                 $.post("/api/friends", newUser)
                     .then(function (data) {
-                        console.log(data);
-                        alert("Adding user...");
+
+                        $("#friendName").text(data.name);
+
+                        $("#friendImage").attr('src', data.photo);
+
+                        $('#friendModal').modal()
                     });
-            } else {
-                alert("Form incomplete!");
             }
 
         });

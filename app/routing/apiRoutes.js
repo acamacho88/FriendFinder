@@ -1,31 +1,38 @@
-var friendsList = require("../data/friends");
+var friends = require("../data/friends");
 
 module.exports = function (app) {
 
     app.get("/api/friends", function (req, res) {
-        res.json(friendsList);
+        res.json(friends);
     });
 
     app.post("/api/friends", function (req, res) {
         var newUser = req.body;
 
-        var currBest = friendsList[0];
-        var currBestScore = 0
+        for (var i = 0; i < newUser.scores.length; i++) {
+            newUser.scores[i] = parseInt(newUser.scores[i]);
+        }
 
-        for (var i = 0; i < friendsList.length; i++) {
+        console.log(newUser);
+
+        var currBest = friends[0];
+        var currBestScore = 100
+
+        for (var i = 0; i < friends.length; i++) {
             var compatScore = 0;
-            var currUser = friendsList[i];
-            for (var j = 0; j < currUser.scores; j++) {
-                compatScore += Math.abs(currUser[j] - req.body.scores[j]);
+            var currUser = friends[i];
+
+            for (var j = 0; j < currUser.scores.length; j++) {
+                compatScore += Math.abs(currUser.scores[j] - newUser.scores[j]);
             }
-            if (compatScore > currBestScore) {
+            if (compatScore < currBestScore) {
                 currBest = currUser;
                 currBestScore = compatScore;
             }
         }
 
-        // code to show best user in modal
+        friends.push(newUser);
 
-        friendsList.push(newUser);
+        res.send(currBest);
     });
 };
